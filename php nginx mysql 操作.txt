@@ -1,0 +1,7 @@
+
+nginx : 
+
+1. ?? nginx : service nginx start
+
+2. nginx ???? : service nginx restart / sudo service nginx reload
+
