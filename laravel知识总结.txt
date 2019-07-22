@@ -1,0 +1,11 @@
+﻿1. Equloment 关联： ( 详情可参考 https://blog.csdn.net/sanbingyutuoniao123/article/details/52057326 )
+
+使用模型关联，如 article 模型中，使用 $this->belongsTo('users', 'article 的主键', 'users 的主键');
+
+在 blade 模板中，如果需要使用到 users 里的参数，如 users 表的 name ，则可以直接这样使用： {{ $article->users->name }}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+2. 部分不能的权限认证可以用 policy 来控制
+
+3. 模型设置有 hasmany ，则可以使用 withcount() 方法来获取数量；
