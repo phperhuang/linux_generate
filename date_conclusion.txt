@@ -1,0 +1,32 @@
+2019-07-24
+
+一、数据库引擎的区别与应用场景：
+
+MyISAM 不支持事务，而 InnoDB 支持事务， MyISAM 类型的表强调的是性能，其执行数度比 InnoDB 类型更快，但是不提供事务支持，而 InnoDB 提供事务支持已经外部键等高级数据库功能。
+
+1、MyIASM 是非事务安全的，而 InnoDB 是事务安全的
+
+2、MyIASM 锁的粒度是表级的，而 InnoDB 支持行级锁
+
+3、MyIASM 支持全文类型索引，而 InnoDB 不支持全文索引
+
+4、MyIASM 相对简单，效率上要优于 InnoDB ，小型应用可以考虑使用MyIASM
+
+5、MyIASM 表保存成文件形式，跨平台使用更加方便
+
+应用场景：
+
+1、MyIASM 管理非事务表，提供高速存储和检索以及全文搜索能力，如果再应用中执行大量 select 操作，应该选择 MyIASM
+
+2、InnoDB 用于事务处理，具有ACID事务支持等特性，如果在应用中执行大量 insert 和 update 操作，应该选择 InnoDB
+
+
+二、文件创建与写入
+
+//fopen 方法，如果有该文件，则打开，没有该文件，则创建该文件
+$new_file = fopen('a.php', 'w');
+$string = 'Hello World\n';
+fwrite($new_file, $string);
+$new_string = 'Hello nginx';
+fwrite($new_file, $new_string);
+fclose($new_file);
