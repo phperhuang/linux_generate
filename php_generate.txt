@@ -1,0 +1,23 @@
+
+php 基础知识：
+
+1、 改变编码格式的函数： iconv('UTF-8', 'GBK', $str);  将 $str 的编码格式从 UTF-8 改为 GBK
+
+2、 截取字符串 substr(源字符串,其实位置[,长度])-截取字符串返回部分字符串
+	
+	$str = 'phpddt.com';
+	echo substr($str,2);	//pddt.com
+	echo substr($str, 2, 3);//返回 pdd
+	echo substr($str,-2);	//om 负数从结尾开始取
+	
+3、 explode(separator, string, limit) 函数把字符串打散为数组。 除了 limit 是可选，另外两个都是必选
+
+4、 str_replace(find,replace,string); php 替换字符串; echo str_replace("world","Shanghai","Hello world!");
+
+5、 HTTP 的状态值：
+
+	一二三四五原则:（即一：消息系列；二：成功系列； 三：重定向系列；四：请求错误系列；五：服务器端错误系列。） 如：
+	302:临时转移成功，请求的内容已转移到新位置
+	403:禁止访问 
+	500:服务器内部错误 
+	401：代表未授权。
